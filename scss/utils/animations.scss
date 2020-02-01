@@ -1,0 +1,26 @@
+@mixin animation-mixin($name) {
+    @keyframes #{$name} {
+        from {
+            width:100%;
+        }
+        
+        to {
+            background-image: linear-gradient(to left, rgba(black, .4), rgba(255,0,0,.1));
+            width:50%;
+        }
+    }
+}
+
+
+
+@keyframes opac {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+}
