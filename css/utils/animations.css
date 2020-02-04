@@ -1,0 +1,9 @@
+@keyframes opac {
+  from {
+    visibility: hidden;
+    opacity: 0; }
+  to {
+    visibility: visible;
+    opacity: 1; } }
+
+/*# sourceMappingURL=animations.css.map */

@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'LibreBaskerville';
+  src: url("../webfonts/LibreBaskerville-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: 'SourceSans';
+  src: url("../webfonts/SourceSansPro-Regular.ttf") format("truetype"); }
+h1, h2, h3, h4 {
+  font-family: "LibreBaskerville"; }
+
+p {
+  margin-bottom: 0; }
+
+p, span, small, a {
+  font-family: 'SourceSans'; }
+
+.orange-color {
+  color: #F49110; }
+
+.btn-app {
+  position: relative;
+  background: none;
+  color: #F49110;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid #F49110;
+  padding: .275rem 1.5rem; }
+  .btn-app::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1); }
+  .btn-app::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    left: 20%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1); }
+  .btn-app:hover::before {
+    right: 80%; }
+  .btn-app:hover::after {
+    left: 80%; }
+
+/*# sourceMappingURL=defaults.css.map */
