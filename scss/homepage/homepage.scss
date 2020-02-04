@@ -37,10 +37,25 @@
     }
 }
 
+#login-form-wrapper.shown {
+    -webkit-transition: 3s;
+    -moz-transition: 3s;
+    -ms-transition: 3s;
+    -o-transition: 3s;
+    transition: 3s;
+    visibility: visible;
+     opacity: 1;
+  }
+
+  #login-form-wrapper {
+    visibility: hidden;
+    opacity: 0;
+  }
+
 
 #login-form {
     width:40%;
-
+    
     .form-control {
         background:none;
         border-color:$orange-color;

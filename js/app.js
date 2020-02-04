@@ -116,7 +116,7 @@ class UXList {
 
         // delete from ux;
         this.myList.removeChild(groceryItem);
-
+            
         // delete from list arr;
         const tempListGroceries = this.addedGroceries.filter(item => {
             return item.id !== id;
@@ -136,7 +136,6 @@ class UXList {
         console.log(this.addedGroceries);
 
     }
-
 };
 
 
