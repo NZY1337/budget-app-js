@@ -1,4 +1,4 @@
-class LocalStorageUserLogin {
+class UserLogin {
     constructor() {
         this.myForm = document.getElementById('login-form');
         this.myFormEmail = this.myForm.elements['login-form-name'];
@@ -8,8 +8,8 @@ class LocalStorageUserLogin {
         
         console.log('build localStorage user login');
     }
-
-
+    
+    
     checkSubmit = (e) => {
         const userInfo = new Object();
             
@@ -25,12 +25,12 @@ class LocalStorageUserLogin {
            console.table(this.loggedPeople);
         });
     }
-
+    
     test  = () => {
         return '1111111'
     }
 }
-export default LocalStorageUserLogin;
+export default UserLogin;
 
 
 

@@ -1,6 +1,6 @@
-import UXList from '../js/app.js';
+import BudgetController from '../budget/budget-controller.js';
 
-class Counter extends UXList{
+class Counter extends BudgetController{
     constructor() {
         super();
         this.inputCounter = document.getElementById('item-quantity');
@@ -9,7 +9,7 @@ class Counter extends UXList{
         this.add = null;
         this.substract = null;
     }
-
+    
     
     appendQuantityInput = () =>{
         const parentQuantityElement = this.groceryQuantity.parentNode;
@@ -72,3 +72,5 @@ function eventListeners() {
 document.addEventListener('DOMContentLoaded', function(){
     eventListeners();
 });
+
+export default Counter;

@@ -1,7 +1,5 @@
-import {budget} from '../js/budget.js';
 
-
-class UXList {
+class BudgetController {
     constructor(_list) {
         this.myList = _list;
         this.itemName = document.getElementById('item-name');
@@ -20,6 +18,10 @@ class UXList {
         return li;
     }
     
+    removeAllGroceries = () => {
+        console.log('removed')
+    }
+
     submitGrocery = () => {
         const itemNameValue = this.itemName.value;
         const itemPriceValue = this.itemPrice.value;
@@ -53,18 +55,18 @@ class UXList {
         this.addedGroceries.push(groceries);
         console.log(this.addedGroceries);
 
-        // display all added groceries to UX
-        this.appendGroceriesToUx(this.addedGroceries);
+        // display all added groceries to budget
+        this.appendGroceriesTobudget(this.addedGroceries);
     }
     
     
-    // UX Groceries function
-    appendGroceriesToUx = (list) => {
+    // budget Groceries function
+    appendGroceriesTobudget = (list) => {
         const li = document.createElement('li');
         li.classList.add('d-flex', 'justify-content-between', 'mt-3');
 
         for (const item of list) {
-            // this.myList.appendChild(UXList.createLiItem(item.grocery));
+            // this.myList.appendChild(budgetList.createLiItem(item.grocery));
             
             li.innerHTML = 
                 `
@@ -73,14 +75,14 @@ class UXList {
                     <span class="">Grocery Price: $ ${item.price}</span>
                     <span class="">Grocery Quantity: ${item.quantity}</span>
                 </div>
-
+            
                 <div>
                     <a href="#" class="edit-icon d-inline-block w-25 text-right mr-3" data-id="${item.id}">
-                        <i class="fa fa-edit"></i>
+                        <i class="fa text-dark fa-edit fa-x"></i>
                     </a>
 
                     <a href="#" class="delete-icon d-inline-block w-25 text-right" data-id="${item.id}">
-                        <i class="fa fa-trash"></i>
+                        <i class="fa fa-trash text-danger fa-x"></i>
                     </a>
                 </div>
                 `
@@ -93,17 +95,16 @@ class UXList {
         const id = parseInt(item.dataset.id);
         const groceryItem = item.parentElement.parentElement;
 
-        // delete from ux;
+        // delete from budget;
         this.myList.removeChild(groceryItem);      
         
         // delete from list arr;
         const tempListGroceries = this.addedGroceries.filter(item => {
             return item.id !== id;
         });
-
+        
         this.addedGroceries = tempListGroceries;
         console.log(this.addedGroceries);
-        
     }
 
     // edit grocery
@@ -114,7 +115,7 @@ class UXList {
         const id = parseInt(item.dataset.id);
         const groceryItem = item.parentElement.parentElement;
 
-        // delete from ux;
+        // delete from budget;
         this.myList.removeChild(groceryItem);
             
         // delete from list arr;
@@ -134,7 +135,6 @@ class UXList {
 
         this.addedGroceries = tempListGroceries;
         console.log(this.addedGroceries);
-
     }
 };
 
@@ -143,26 +143,29 @@ function eventListeners() {
     const actions = document.getElementById('list');
     const addItem = document.getElementById('myForm');
     const list = document.getElementById('list');
+    const removeAllGroceries = document.getElementById('remove-all-groceries');
+
   
     // class init
-    const ux = new UXList(list, 10);
-         
+    const budget = new BudgetController(list, 10);
+
+    // remove all groceries
+    removeAllGroceries.addEventListener('click', budget.removeAllGroceries);
 
     // append item;
     addItem.addEventListener('submit', function(event){
         event.preventDefault();
-        ux.submitGrocery();
+        budget.submitGrocery();
     })
-
 
     // actions (delete + edit)
     actions.addEventListener('click', function(event){
         if (event.target.parentElement.classList.contains('delete-icon')) {
-            ux.deleteGrocery(event.target.parentElement);
+            budget.deleteGrocery(event.target.parentElement);
         }
 
         if (event.target.parentElement.classList.contains('edit-icon')) {
-            ux.editGrocery(event.target.parentElement);
+            budget.editGrocery(event.target.parentElement);
         }
     });
 };
@@ -173,5 +176,4 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-
-export default UXList;
+export default BudgetController;

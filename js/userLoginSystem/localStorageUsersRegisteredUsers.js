@@ -1,4 +1,4 @@
-import LocalStorageUserLogin from './localstorageUserLogin.js';
+import localStorageUsersRegisteredUsers from './UserLogin.js';
 
 export class LocalStorageUsers extends LocalStorageUserLogin {
     constructor() {
@@ -7,6 +7,4 @@ export class LocalStorageUsers extends LocalStorageUserLogin {
 }
 
 
-
 const userLocal = new LocalStorageUsers;
-console.log(userLocal.test());

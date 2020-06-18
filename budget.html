@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <!-- bootstrap css -->
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+ <!-- main css -->
+ <link rel="stylesheet" href="css/project.css">
+ <!-- google fonts -->
+ <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+
+ <!-- font awesome -->
+ <link rel="stylesheet" href="css/all.css">
+ <title>my app</title>
+ <style>
+ </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row mt-5">
+    <div class="col-lg-6">
+        <h1>Groceries</h1>
+
+        <div class="budget-feedback alert alert-danger text-capitalize"><p>value cannot be empty or negative </p></div>
+        <form action="" id="myForm">
+            <div class="form-group">
+                <label for="item-name">Item Name</label>
+                <input type="text" class="form-control" id="item-name">
+            </div>
+            
+            <div class="form-group">
+                <label for="item-value">Item Price</label>
+                <input type="number" class="form-control" id="item-price">
+            </div>
+            
+            <div class="form-group">
+                <label for="item-quantity">Quantity</label>
+                <div class="quantity">
+                    <input id="item-quantity" type="number" min="1" max="9" step="1" value="1">
+                </div>
+            </div>
+
+            <div style="clear:both;"></div>
+
+            <div class="form-group mt-3">
+                <button type="submit" class="btn" id="add-item">Add Item</button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="col-lg-6">
+        <h1>List</h1>
+        
+        <div>
+            <ul id="list" class="pl-0">
+                
+            </ul>
+
+            <button class="btn btn-secondary btn-sm" id="remove-all-groceries">Remove Groceries</button>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+ <!-- jquery -->
+ <script src="js/assets/jquery-3.3.1.min.js"></script>
+ <!-- bootstrap js -->
+ <script src="js/assets/bootstrap.bundle.min.js"></script>
+
+
+ <!-- script js -->
+ <script src="js/budget/budget/budget-controller.js" type="module"></script>
+ <!-- <script src="js/budget/test-budget.js" type="module"></script> -->
+ <script src="js/budget/handleQuantity/counter.js" type="module"></script>
+</body>
+
+</html>
