@@ -21,4 +21,4 @@ function loadClassUX() {
 
 document.addEventListener('DOMContentLoaded', function(){
     loadClassUX();
-});
+}); 
