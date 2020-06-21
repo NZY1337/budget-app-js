@@ -31,11 +31,12 @@ class BudgetController {
 
         if (this.addedGroceries.length == 0) {
             REMOVE_GROCERIES_BTN.classList.add('d-none');
-        }
+        }   
+        
         this.CURRENT_TOTAL = 0;
         this.sumHolder.innerHTML = `TOTAL: <b>$${this.CURRENT_TOTAL}</b>`;
     }
-
+    
     submitGrocery = () => {
         const itemNameValue = this.itemName.value;
         const itemPriceValue = this.itemPrice.value;
@@ -67,6 +68,8 @@ class BudgetController {
         
         this.id++;
         this.addedGroceries.push(groceries);
+
+        console.log(this.addedGroceries)
 
         // display all added groceries to budget
         this.appendGroceriesTobudget(this.addedGroceries);
@@ -109,10 +112,12 @@ class BudgetController {
 
     // delete grocery
     deleteGrocery = item => {
+        
+
         const id = parseInt(item.dataset.id);
         const groceryItem = item.parentElement.parentElement;
 
-        if (budget.addedGroceries.length == 0) {
+        if (this.addedGroceries.length == 0) {
             REMOVE_GROCERIES_BTN.classList.add('d-none');
         }
 
@@ -130,7 +135,11 @@ class BudgetController {
             return item.id !== id;
         });
         
+        
         this.addedGroceries = tempListGroceries;
+        console.log(this.addedGroceries)
+
+
     }
 
     // edit grocery
