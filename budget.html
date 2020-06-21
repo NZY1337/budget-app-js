@@ -23,47 +23,49 @@
 
 <div class="container">
     <div class="row mt-5">
-    <div class="col-lg-6">
-        <h1>Groceries</h1>
+        <div class="col-lg-6">
+            <h1>Groceries</h1>
 
-        <div class="budget-feedback alert alert-danger text-capitalize"><p>value cannot be empty or negative </p></div>
-        <form action="" id="myForm">
-            <div class="form-group">
-                <label for="item-name">Item Name</label>
-                <input type="text" class="form-control" id="item-name">
-            </div>
-            
-            <div class="form-group">
-                <label for="item-value">Item Price</label>
-                <input type="number" class="form-control" id="item-price">
-            </div>
-            
-            <div class="form-group">
-                <label for="item-quantity">Quantity</label>
-                <div class="quantity">
-                    <input id="item-quantity" type="number" min="1" max="9" step="1" value="1">
+            <div class="budget-feedback alert alert-danger text-capitalize d-none"><p>value cannot be empty or negative </p></div>
+            <form action="" id="myForm">
+                <div class="form-group">
+                    <label for="item-name">Item Name</label>
+                    <input type="text" class="form-control" id="item-name">
                 </div>
-            </div>
-
-            <div style="clear:both;"></div>
-
-            <div class="form-group mt-3">
-                <button type="submit" class="btn" id="add-item">Add Item</button>
-            </div>
-        </form>
-    </div>
-    
-    <div class="col-lg-6">
-        <h1>List</h1>
-        
-        <div>
-            <ul id="list" class="pl-0">
                 
-            </ul>
+                <div class="form-group">
+                    <label for="item-value">Item Price</label>
+                    <input type="number" class="form-control" id="item-price">
+                </div>
+                
+                <div class="form-group">
+                    <label for="item-quantity">Quantity</label>
+                    <div class="quantity">
+                        <input id="item-quantity" type="number" min="1" max="9" step="1" value="1">
+                    </div>
+                </div>
 
-            <button class="btn btn-secondary btn-sm" id="remove-all-groceries">Remove Groceries</button>
+                <div style="clear:both;"></div>
+
+                <div class="form-group mt-3">
+                    <button type="submit" class="btn">Add Item</button>
+                </div>
+            </form>
         </div>
-    </div>
+        
+        <div class="col-lg-6">
+            <h1>List</h1>
+            
+            <div>
+                <ul id="list" class="pl-0">
+                    
+                </ul>
+
+                <button class="btn btn-secondary btn-sm d-none mb-5" id="remove-all-groceries">Remove Groceries</button>
+
+                <p id="total">TOTAL:</p>
+            </div>
+        </div>
     </div>
 </div>
 

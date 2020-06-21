@@ -20,11 +20,11 @@ class Counter extends BudgetController{
             <div class="quantity-button quantity-up">+</div>
             <div class="quantity-button quantity-down">-</div>
         `
-
+        
         div.innerHTML = innerElement;
         parentQuantityElement.insertBefore(div, this.groceryQuantity.nextSibling);
     }
- 
+    
     addCounter = () => {
         var oldV = parseFloat(this.inputCounter.value);
         var newV = oldV;
@@ -45,7 +45,7 @@ class Counter extends BudgetController{
         if (newV <= this.min) {
             newV = this.min;
         }
-        console.log(newV);
+        
         this.inputCounter.value = newV;
     }
 }
