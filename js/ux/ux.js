@@ -13,7 +13,6 @@ class UserExperience {
 }
 
 
-
 function loadClassUX() {
     const myUserExp = new UserExperience('btn-user-login', 'login-form-wrapper');
     myUserExp.toggleLogginForm();
